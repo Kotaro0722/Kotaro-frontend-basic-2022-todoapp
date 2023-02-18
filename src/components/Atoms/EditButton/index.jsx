@@ -35,6 +35,7 @@ const Circle = styled.div`
     position: absolute;
     left: 21px;
     background-color: transparent;
+    cursor: pointer;
   }
 `;
 
