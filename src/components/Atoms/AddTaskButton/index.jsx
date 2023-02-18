@@ -7,9 +7,9 @@ import TEXT from "../../../variables/texts";
 const AddTaskButton = (props) => {
   return (
     <Wrapper>
-      <Img src={plus}></Img>
+      <Img src={plus} />
       <Text>タスクを追加</Text>
-      <Rectangle></Rectangle>
+      <Rectangle />
     </Wrapper>
   );
 };
