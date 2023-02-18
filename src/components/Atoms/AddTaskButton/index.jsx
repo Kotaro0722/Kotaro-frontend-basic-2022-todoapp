@@ -22,6 +22,7 @@ const Wrapper = styled.button`
   ${TEXT.S};
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 const Img = styled.img`
