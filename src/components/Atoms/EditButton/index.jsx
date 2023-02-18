@@ -3,7 +3,7 @@ import styled from "styled-components";
 import pencil from "../../../assets/svg/pencil.svg";
 import COLOR from "../../../variables/color";
 
-const SampleButton = (props) => {
+const EditButton = (props) => {
   return (
     <Button onClick={props.onClick}>
       <Circle></Circle>
@@ -38,4 +38,4 @@ const Circle = styled.div`
   }
 `;
 
-export default SampleButton;
+export default EditButton;
