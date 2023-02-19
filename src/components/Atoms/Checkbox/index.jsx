@@ -5,7 +5,7 @@ import COLOR from "../../../variables/color";
 
 const Checkbox = (props) => {
   return (
-    <Box>
+    <Box onClick={props.onClick}>
       <Check src={check} />
     </Box>
   );
