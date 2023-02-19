@@ -15,6 +15,7 @@ const AddTaskButton = (props) => {
 };
 
 const Wrapper = styled.button`
+  position: relative;
   display: flex;
   width: 126px;
   gap: 10px;
@@ -36,8 +37,8 @@ const Text = styled.div`
 
 const Rectangle = styled.div`
   position: absolute;
-  left: 17px;
-  top: 16px;
+  left: 0px;
+  top: 0px;
   width: 126px;
   height: 24px;
   padding: 2px 6px;
