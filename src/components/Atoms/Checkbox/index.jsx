@@ -14,7 +14,6 @@ const Check = styled.img`
   display: none;
   width: 16px;
   height: 16px;
-  }
 `;
 
 const Box = styled.div`
@@ -23,8 +22,9 @@ const Box = styled.div`
   border: 2px solid ${COLOR.LIGHT_GRAY};
   border-radius: 2px;
   cursor: pointer;
-  ${Box}:hover ${Check}{
+  &:hover ${Check} {
     display: block;
+  }
 `;
 
 export default Checkbox;
