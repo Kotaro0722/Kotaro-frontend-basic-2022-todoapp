@@ -6,7 +6,7 @@ import TEXT from "../../../variables/texts";
 
 const AddTaskButton = (props) => {
   return (
-    <Wrapper>
+    <Wrapper onClick={props.onClick}>
       <Img src={plus} />
       <Text>タスクを追加</Text>
       <Rectangle />
@@ -41,7 +41,7 @@ const Rectangle = styled.div`
   width: 126px;
   height: 24px;
   padding: 2px 6px;
-  ${Rectangle}:hover {
+  &:hover {
     background-color: ${COLOR.GREEN};
     opacity: 0.2;
     border-radius: 12px;
