@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 
-const Input = (onEditComplete, defaultValue) => {
+const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef();
   useEffect(() => {
-    inputRef.current = defaultValue;
-  });
-  return <styledInput ref={inputRef}>{inputRef.current}</styledInput>;
+    inputRef.current.innerHTML = defaultValue;
+  }, []);
+  return <styledInput ref={inputRef}></styledInput>;
 };
 
 const styledInput = styled.input`
