@@ -4,11 +4,29 @@ import COLOR from "../../../variables/color";
 
 const Input = (onEditComplete, defaultValue) => {
   const inputRef = useRef();
+  let focusOutEvent = function () {};
+  let keyPressEvent = function () {};
   useEffect(() => {
+    defaultValue = "";
     inputRef.current.value = defaultValue;
     () => inputRef.current.focus();
+    focusOutEvent = () => {
+      onEditComplete(inputRef.current.value);
+      console.log("a");
+    };
+    keyPressEvent = ({ key, value }) => {
+      if (key.key == "Enter") {
+        onEditComplete(value);
+      }
+    };
   }, []);
-  return <StyledInput ref={inputRef}></StyledInput>;
+  return (
+    <StyledInput
+      ref={inputRef}
+      onFocus={focusOutEvent()}
+      onKeyPress={(e) => keyPressEvent(e, inputRef.current.value)}
+    ></StyledInput>
+  );
 };
 
 const StyledInput = styled.input`
