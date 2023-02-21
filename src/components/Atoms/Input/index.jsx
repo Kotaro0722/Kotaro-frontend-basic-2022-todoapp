@@ -6,17 +6,18 @@ const Input = (onEditComplete, defaultValue) => {
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.value = defaultValue;
+    () => inputRef.current.focus();
   }, []);
-  return <Box ref={inputRef}></Box>;
+  return <StyledInput ref={inputRef}></StyledInput>;
 };
 
-const Box = styled.input`
+const StyledInput = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
   border-radius: 2px;
   color: ${COLOR.LIGHT_GRAY};
-  ${Box}:focus {
+  ${StyledInput}:focus {
     background-color: ${COLOR.BLACK};
   }
 `;
