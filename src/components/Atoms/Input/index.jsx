@@ -35,6 +35,7 @@ const StyledInput = styled.input`
   outline: none;
   border-radius: 2px;
   color: ${COLOR.LIGHT_GRAY};
+  padding-left: 4px;
 `;
 
 export default Input;
