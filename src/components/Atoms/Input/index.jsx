@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 
-const Input = (onEditComplete, defaultValue) => {
+const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef();
   const FocusOutEvent = function (props) {
     () => onEditComplete(props);
@@ -23,6 +23,7 @@ const Input = (onEditComplete, defaultValue) => {
       ref={inputRef}
       onFocus={FocusOutEvent()}
       onKeyPress={(e) => keyPressEvent(e, inputRef.current.value)}
+      value=""
     ></StyledInput>
   );
 };
