@@ -30,14 +30,11 @@ const Input = (onEditComplete, defaultValue) => {
 };
 
 const StyledInput = styled.input`
-  background-color: transparent;
-  border: none;
+  background-color: ${COLOR.BLACK};
+  border: solid ${COLOR.BLACK};
   outline: none;
   border-radius: 2px;
   color: ${COLOR.LIGHT_GRAY};
-  ${StyledInput}:focus {
-    background-color: ${COLOR.BLACK};
-  }
 `;
 
 export default Input;
