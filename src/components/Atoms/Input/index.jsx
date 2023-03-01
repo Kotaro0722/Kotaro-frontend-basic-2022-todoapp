@@ -16,13 +16,13 @@ const Input = ({ onEditComplete, defaultValue }) => {
       "keydown",
       (key) => {
         if (key.key === "Enter") {
-          onEditComplete(inputRef.current.value);
+          () => onEditComplete(inputRef.current.value);
         }
       },
       false
     );
   }, []);
-  return <StyledInput ref={inputRef} value=""></StyledInput>;
+  return <StyledInput ref={inputRef} value={defaultValue}></StyledInput>;
 };
 
 const StyledInput = styled.input`
