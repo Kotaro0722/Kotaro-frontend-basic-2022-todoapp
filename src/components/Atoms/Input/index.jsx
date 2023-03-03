@@ -17,7 +17,7 @@ const Input = ({ onEditComplete, defaultValue }) => {
       "keydown",
       (key) => {
         if (key.key === "Enter") {
-          () => onEditComplete(inputRef.current.value);
+          onEditComplete(inputRef.current.value);
         }
       },
       false
