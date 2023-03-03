@@ -23,7 +23,7 @@ const Input = ({ onEditComplete, defaultValue }) => {
       false
     );
   }, []);
-  return <StyledInput ref={inputRef} value={defaultValue}></StyledInput>;
+  return <StyledInput ref={inputRef}></StyledInput>;
 };
 
 const StyledInput = styled.input`
