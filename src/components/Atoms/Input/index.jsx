@@ -10,7 +10,7 @@ const Input = ({ onEditComplete, defaultValue }) => {
     inputRef.current.focus();
     inputRef.current.addEventListener(
       "blur",
-      onEditComplete(inputRef.current.value),
+      () => onEditComplete(inputRef.current.value),
       false
     );
     inputRef.current.addEventListener(
