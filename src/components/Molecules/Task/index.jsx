@@ -41,16 +41,6 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
           </StyledEditButtonWrapper>
         </StyledNameAndButtonWrapper>
       )}
-      {/* if (isEditing == true) {
-        <Input onEditComplete={taskName}></Input>
-      } else {
-        <StyledNameButtonWrapper>
-          <StyledTaskName>{taskName}</StyledTaskName>
-          <StyledEditButtonWrapper>
-            <EditButton onClick={onEditButtonClick()}></EditButton>
-          </StyledEditButtonWrapper>
-        </StyledNameButtonWrapper>
-      } */}
     </StyledWrapper>
   );
 };
