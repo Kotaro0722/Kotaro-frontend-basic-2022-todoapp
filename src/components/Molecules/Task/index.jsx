@@ -20,25 +20,31 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
       <StyledCheckBoxWrapper>
         <CheckBox onClick={onTaskComplete}></CheckBox>
       </StyledCheckBoxWrapper>
-      {/* <Input onEditComplete={taskName} defaultValue={taskName}></Input>;
-      <StyledNameButtonWrapper>
+      <Input onEditComplete={taskName} defaultValue={taskName}></Input>
+      <StyledNameAndButtonWrapper>
         <StyledTaskName>{taskName}</StyledTaskName>
         <StyledEditButtonWrapper>
           <EditButton onEditButtonClick></EditButton>
         </StyledEditButtonWrapper>
-      </StyledNameButtonWrapper> */}
-      {(() => {
-        if (isEditing == true) {
-          <Input onEditComplete={taskName}></Input>;
-        } else {
-          <StyledNameButtonWrapper>
-            <StyledTaskName>{taskName}</StyledTaskName>
-            <StyledEditButtonWrapper>
-              <EditButton onClick={onEditButtonClick()}></EditButton>
-            </StyledEditButtonWrapper>
-          </StyledNameButtonWrapper>;
-        }
-      })()}
+      </StyledNameAndButtonWrapper>
+
+      {/* (isEditing ? (<Input onEditComplete={taskName}></Input>):(<StyledNameButtonWrapper>
+          <StyledTaskName>{taskName}</StyledTaskName>
+          <StyledEditButtonWrapper>
+            <EditButton onClick={onEditButtonClick()}></EditButton>
+          </StyledEditButtonWrapper>
+        </StyledNameButtonWrapper>)
+      ) */}
+      {/* if (isEditing == true) {
+        <Input onEditComplete={taskName}></Input>
+      } else {
+        <StyledNameButtonWrapper>
+          <StyledTaskName>{taskName}</StyledTaskName>
+          <StyledEditButtonWrapper>
+            <EditButton onClick={onEditButtonClick()}></EditButton>
+          </StyledEditButtonWrapper>
+        </StyledNameButtonWrapper>
+      } */}
     </StyledWrapper>
   );
 };
@@ -47,8 +53,16 @@ export default Task;
 
 const StyledWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
-const StyledCheckBoxWrapper = styled.div``;
-const StyledNameButtonWrapper = styled.div``;
-const StyledTaskName = styled.div``;
+const StyledCheckBoxWrapper = styled.div`
+  margin-right: 10px;
+`;
+const StyledNameAndButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const StyledTaskName = styled.div`
+  text-align: center;
+`;
 const StyledEditButtonWrapper = styled.div``;
