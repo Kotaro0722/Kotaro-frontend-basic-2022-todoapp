@@ -15,6 +15,7 @@ const EditButton = (props) => {
 const Button = styled.button`
   background-color: transparent;
   border: none;
+  padding: 0px;
 `;
 const Img = styled.img`
   color: ${COLOR.LIGHT_GRAY};
