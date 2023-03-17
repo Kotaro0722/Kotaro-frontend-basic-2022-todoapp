@@ -15,6 +15,7 @@ const EditButton = (props) => {
 const Button = styled.button`
   background-color: transparent;
   border: none;
+  position: relative;
   padding: 0px;
 `;
 const Img = styled.img`
@@ -28,15 +29,14 @@ const Circle = styled.div`
     opacity: 0.2;
     border-radius: 50%;
     position: absolute;
-    left: 21px;
   }
   ${Circle} {
     width: 25px;
     height: 25px;
     position: absolute;
-    left: 21px;
     background-color: transparent;
     cursor: pointer;
+    z-index: 10;
   }
 `;
 
