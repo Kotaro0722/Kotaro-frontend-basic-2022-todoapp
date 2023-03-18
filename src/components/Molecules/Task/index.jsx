@@ -7,9 +7,12 @@ import COLOR from "../../../variables/color.js";
 
 const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
+  const [editTaskName, setEditTaskName] = useState(taskName);
   const onEditComplete = (value) => {
+    setEditTaskName(value);
     setIsEditing(false);
     onTaskChange(value);
+    console.log(taskName);
   };
   const onEditButtonClick = () => {
     setIsEditing(true);
@@ -21,12 +24,12 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
       </StyledCheckBoxWrapper>
       {isEditing ? (
         <Input
-          onEditComplete={() => onEditComplete(taskName)}
-          defaultValue={taskName}
+          onEditComplete={(value) => onEditComplete(value)}
+          defaultValue={editTaskName}
         />
       ) : (
         <StyledNameAndButtonWrapper>
-          <StyledTaskName>{taskName}</StyledTaskName>
+          <StyledTaskName>{editTaskName}</StyledTaskName>
           <StyledEditButtonWrapper>
             <EditButton onClick={onEditButtonClick}></EditButton>
           </StyledEditButtonWrapper>
