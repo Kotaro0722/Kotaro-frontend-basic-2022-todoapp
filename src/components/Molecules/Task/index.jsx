@@ -12,7 +12,6 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
     setEditTaskName(value);
     setIsEditing(false);
     onTaskChange(value);
-    console.log(taskName);
   };
   const onEditButtonClick = () => {
     setIsEditing(true);
