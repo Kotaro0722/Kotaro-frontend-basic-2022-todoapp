@@ -50,7 +50,7 @@ const StyledCheckBoxWrapper = styled.div`
 `;
 const StyledInputWrapper = styled.div`
   position: relative;
-  left: 26px;
+  left: 30px;
 `;
 const StyledNameAndButtonWrapper = styled.div`
   display: flex;
@@ -60,7 +60,7 @@ const StyledTaskName = styled.div`
   text-align: center;
   color: ${COLOR.LIGHT_GRAY};
   position: relative;
-  left: 26px;
+  left: 30px;
 `;
 const StyledEditButtonWrapper = styled.div`
   position: relative;
