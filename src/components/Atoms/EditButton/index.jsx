@@ -31,8 +31,8 @@ const Circle = styled.div`
     position: absolute;
   }
   ${Circle} {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     background-color: transparent;
     cursor: pointer;
