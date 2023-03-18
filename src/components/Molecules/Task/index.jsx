@@ -7,9 +7,7 @@ import COLOR from "../../../variables/color.js";
 
 const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
-  const [editTaskName, setEditTaskName] = useState(taskName);
   const onEditComplete = (value) => {
-    setEditTaskName(value);
     setIsEditing(false);
     onTaskChange(value);
   };
@@ -25,12 +23,12 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
         <StyledInputWrapper>
           <Input
             onEditComplete={(value) => onEditComplete(value)}
-            defaultValue={editTaskName}
+            defaultValue={taskName}
           />
         </StyledInputWrapper>
       ) : (
         <StyledNameAndButtonWrapper>
-          <StyledTaskName>{editTaskName}</StyledTaskName>
+          <StyledTaskName>{taskName}</StyledTaskName>
           <StyledEditButtonWrapper>
             <EditButton onClick={onEditButtonClick}></EditButton>
           </StyledEditButtonWrapper>
