@@ -10,11 +10,9 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
   const onEditComplete = (value) => {
     setIsEditing(false);
     () => onTaskChange(value);
-    console.log(value);
   };
   const onEditButtonClick = () => {
     setIsEditing(true);
-    console.log(isEditing);
   };
   return (
     <StyledWrapper>
