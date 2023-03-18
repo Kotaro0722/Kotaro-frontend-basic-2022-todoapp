@@ -9,7 +9,7 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
   const onEditComplete = (value) => {
     setIsEditing(false);
-    () => onTaskChange(value);
+    onTaskChange(value);
   };
   const onEditButtonClick = () => {
     setIsEditing(true);
