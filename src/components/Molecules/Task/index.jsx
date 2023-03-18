@@ -23,10 +23,12 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
         <CheckBox onClick={onTaskComplete}></CheckBox>
       </StyledCheckBoxWrapper>
       {isEditing ? (
-        <Input
-          onEditComplete={(value) => onEditComplete(value)}
-          defaultValue={editTaskName}
-        />
+        <StyledInputWrapper>
+          <Input
+            onEditComplete={(value) => onEditComplete(value)}
+            defaultValue={editTaskName}
+          />
+        </StyledInputWrapper>
       ) : (
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{editTaskName}</StyledTaskName>
@@ -47,6 +49,11 @@ const StyledWrapper = styled.div`
 `;
 const StyledCheckBoxWrapper = styled.div`
   margin-right: 10px;
+  position: absolute;
+`;
+const StyledInputWrapper = styled.div`
+  position: relative;
+  left: 26px;
 `;
 const StyledNameAndButtonWrapper = styled.div`
   display: flex;
@@ -55,5 +62,10 @@ const StyledNameAndButtonWrapper = styled.div`
 const StyledTaskName = styled.div`
   text-align: center;
   color: ${COLOR.LIGHT_GRAY};
+  position: relative;
+  left: 26px;
 `;
-const StyledEditButtonWrapper = styled.div``;
+const StyledEditButtonWrapper = styled.div`
+  position: relative;
+  left: 200px;
+`;
