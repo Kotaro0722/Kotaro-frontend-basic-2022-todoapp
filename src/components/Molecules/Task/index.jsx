@@ -32,7 +32,7 @@ const Task = ({ onTaskChange, onTaskComplete, taskName, defaultIsEditing }) => {
         <Input
           onEditComplete={() => onEditComplete(taskName)}
           defaultValue={taskName}
-        ></Input>
+        />
       ) : (
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{taskName}</StyledTaskName>
