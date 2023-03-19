@@ -63,6 +63,6 @@ const StyledTaskName = styled.div`
   left: 30px;
 `;
 const StyledEditButtonWrapper = styled.div`
-  position: relative;
-  left: 200px;
+  position: absolute;
+  right: 33.5px;
 `;
