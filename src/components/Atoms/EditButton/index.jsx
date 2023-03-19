@@ -15,7 +15,6 @@ const EditButton = (props) => {
 const Button = styled.button`
   background-color: transparent;
   border: none;
-  position: relative;
   padding: 0px;
 `;
 const Img = styled.img`
