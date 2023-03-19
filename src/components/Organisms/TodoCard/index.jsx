@@ -4,44 +4,51 @@ import AddTaskButton from "../../Atoms/AddTaskButton/index.jsx";
 import Task from "../../Molecules/Task/index.jsx";
 
 const TodoCard = () => {
-  const [taskList, setTaskList] = useState([{}]);
+  const [taskList, setTaskList] = useState([]);
   const onAddTaskButtonClick = () => {
     setTaskList((prevState) => [
       ...prevState,
       { name: "", initializing: true },
     ]);
   };
-  const onTaskComplete = (index) => {
+  const onTaskComplete = (completedIndex) => {
     setTaskList((prevState) => {
-      for (let i in taskList) {
-        if (i != index) {
-          [...prevState, { name: taskList[i], initializing: taskList[i] }];
-        }
-      }
+      const filterdArray = prevState.filter(
+        (_, index) => completedIndex !== index
+      );
+      return filterdArray;
     });
   };
-  const onTaskNameChange = (value, index) => {
-    if (value == null) {
-      onTaskComplete(index);
+  const onTaskNameChange = (changedTaskName, changedIndex) => {
+    if (!changedTaskName) {
+      onTaskComplete(changedIndex);
     } else {
-      setTaskList((taskList[index].name = value));
+      setTaskList((prevState) =>
+        prevState.map((value, index) => {
+          if (changedIndex === index) {
+            return { ...value, name: changedTaskName };
+          } else {
+            return { ...value };
+          }
+        })
+      );
     }
   };
+  // console.log(taskList);
   return (
     <StyledWrapper>
-      <AddTaskButton onClick={onAddTaskButtonClick}>
-        <StyledTaskList>
-          {taskList.map((task, index) => (
-            <Task
-              key={index}
-              onTaskChange={onTaskNameChange(task, index)}
-              onTaskComplete={onTaskComplete(index)}
-              taskName={task.name}
-              defaultIsEditing={task.initializing}
-            ></Task>
-          ))}
-        </StyledTaskList>
-      </AddTaskButton>
+      <AddTaskButton onClick={onAddTaskButtonClick} />
+      <StyledTaskList>
+        {taskList.map((task, index) => (
+          <Task
+            key={index}
+            onTaskChange={(value) => onTaskNameChange(value, index)}
+            onTaskComplete={() => onTaskComplete(index)}
+            taskName={task.name}
+            defaultIsEditing={task.initializing}
+          />
+        ))}
+      </StyledTaskList>
     </StyledWrapper>
   );
 };
@@ -49,4 +56,4 @@ const TodoCard = () => {
 export default TodoCard;
 
 const StyledWrapper = styled.div``;
-const StyledTaskList = styled.div;
+const StyledTaskList = styled.div``;
