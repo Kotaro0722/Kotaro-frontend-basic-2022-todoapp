@@ -35,7 +35,6 @@ const TodoCard = () => {
       );
     }
   };
-  // console.log(taskList);
   return (
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
