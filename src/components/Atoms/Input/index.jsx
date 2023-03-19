@@ -10,13 +10,21 @@ const Input = ({ onEditComplete, defaultValue }) => {
     inputRef.current.focus();
     inputRef.current.addEventListener(
       "blur",
-      () => onEditComplete(inputRef.current.value),
+      () => {
+        if (!inputRef.current) {
+          return;
+        }
+        onEditComplete(inputRef.current.value);
+      },
       false
     );
     inputRef.current.addEventListener(
       "keydown",
       (key) => {
         if (key.key === "Enter") {
+          if (!inputRef.current) {
+            return;
+          }
           onEditComplete(inputRef.current.value);
         }
       },
@@ -28,6 +36,7 @@ const Input = ({ onEditComplete, defaultValue }) => {
 
 const StyledInput = styled.input`
   background-color: ${COLOR.BLACK};
+  width: 418px;
   border: none;
   outline: none;
   border-radius: 2px;
