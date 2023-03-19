@@ -56,7 +56,7 @@ const TodoCard = () => {
 export default TodoCard;
 
 const StyledWrapper = styled.div`
-  background-color: #282a2e;
+  background-color: ${COLOR.LIGHT_BLACK};
   padding: 20px;
   display: flex;
   flex-direction: column;
