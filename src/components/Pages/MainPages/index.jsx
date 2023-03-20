@@ -16,7 +16,8 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
+  margin-top: 60px;
 `;
 
 export default Page;
