@@ -46,23 +46,16 @@ const StyledWrapper = styled.div`
 `;
 const StyledCheckBoxWrapper = styled.div`
   margin-right: 10px;
-  position: absolute;
 `;
-const StyledInputWrapper = styled.div`
-  position: relative;
-  left: 30px;
-`;
+const StyledInputWrapper = styled.div``;
 const StyledNameAndButtonWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex-grow: 1;
 `;
 const StyledTaskName = styled.div`
-  text-align: center;
+  display: flex;
+  flex-grow: 1;
   color: ${COLOR.LIGHT_GRAY};
-  position: relative;
-  left: 30px;
 `;
-const StyledEditButtonWrapper = styled.div`
-  position: absolute;
-  left: 467.5px;
-`;
+const StyledEditButtonWrapper = styled.div``;
