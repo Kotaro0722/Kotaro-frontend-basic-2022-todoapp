@@ -14,9 +14,9 @@ const TodoCard = () => {
     }
   }, []);
   useEffect(() => {
-    const EditedTaskList = JSON.stringify(taskList);
-    localStorage.setItem("data", EditedTaskList);
-  });
+    const editedTaskList = JSON.stringify(taskList);
+    localStorage.setItem("data", editedTaskList);
+  },[taskList]);
   const onAddTaskButtonClick = () => {
     setTaskList((prevState) => [
       ...prevState,
