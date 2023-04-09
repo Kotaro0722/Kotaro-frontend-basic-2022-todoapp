@@ -9,8 +9,8 @@ const TodoCard = () => {
   useEffect(() => {
     const data = localStorage.getItem("data");
     if (data) {
-      const liftedTaskList = JSON.parse(data);
-      setTaskList(liftedTaskList);
+      const parsedTaskList = JSON.parse(data);
+      setTaskList(parsedTaskList);
     }
   }, []);
   useEffect(() => {
