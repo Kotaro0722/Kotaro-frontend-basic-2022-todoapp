@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 
-const Alert = (isActive) => {
+const Alert = (props) => {
   return (
-    <AlertComponent isActive={isActive}>
-      タスクの名前が設定されていません。
+    <AlertComponent isActive={props.isActive}>
+      {props.errorMessage}
     </AlertComponent>
   );
 };
 
 const AlertComponent = styled.div`
-  display: ${(props) => (props.isActive ? "block" : "none")};
+  display: ${(props) => {
+    return props.isActive ? "block" : "none";
+  }};
   padding: 10px 20px;
   gap: 10px;
   width: 400px;
@@ -18,7 +20,6 @@ const AlertComponent = styled.div`
   background-color: ${COLOR.RED};
   color: ${COLOR.WHITE};
   font-size: 14px;
-  display: flex;
   border-radius: 4px;
 `;
 

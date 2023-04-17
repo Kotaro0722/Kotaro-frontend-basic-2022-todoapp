@@ -15,5 +15,6 @@ const Template = (args) => <Component {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  onClick: () => console.log("clicked"),
+  isActive: true,
+  errorMessage: "タスクの名前が設定されていません。",
 };
