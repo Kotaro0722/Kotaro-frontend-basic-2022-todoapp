@@ -10,11 +10,13 @@ export const AlertHandlerProvider = ({ children }) => {
   });
 
   const setAlert = (errorText) => {
-    <Alert isActive={true} errorMessage={errorText}></Alert>;
+    setAlertState({ visible: true, errorText: errorText });
+    <Alert isActive={alertState.visible} errorMessage={errorText}></Alert>;
   };
 
   const closeAlert = () => {
-    <Alert isActive={false}></Alert>;
+    setAlertState({ visible: false, errorText: errorText });
+    <Alert isActive={alertState.visible}></Alert>;
   };
 
   const contextValue = {
