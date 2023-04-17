@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import Alert from "../components/Atoms/Alert/index.jsx";
 
 const AlertHandlerContext = createContext();
 
@@ -9,11 +10,11 @@ export const AlertHandlerProvider = ({ children }) => {
   });
 
   const setAlert = (errorText) => {
-    // TODO: ここを埋める
+    <Alert isActive={true} errorMessage={errorText}></Alert>;
   };
 
   const closeAlert = () => {
-    // TODO: ここを埋める
+    <Alert isActive={false}></Alert>;
   };
 
   const contextValue = {
