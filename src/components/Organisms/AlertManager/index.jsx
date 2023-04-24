@@ -12,7 +12,6 @@ const AlertManager = () => {
   };
   useEffect(() => {
     if (AlertHandlerContext.visible == true) {
-      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       setInterval();
     }
     console.log(AlertHandlerContext.visible);
