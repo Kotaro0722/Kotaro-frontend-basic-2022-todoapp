@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import AddTaskButton from "../../Atoms/AddTaskButton/index.jsx";
 import Task from "../../Molecules/Task/index.jsx";
 import COLOR from "../../../variables/color.js";
+import AlertHandlerContext from "../AlertManager/index.jsx";
 
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -16,7 +17,7 @@ const TodoCard = () => {
   useEffect(() => {
     const editedTaskList = JSON.stringify(taskList);
     localStorage.setItem("data", editedTaskList);
-  },[taskList]);
+  }, [taskList]);
   const onAddTaskButtonClick = () => {
     setTaskList((prevState) => [
       ...prevState,
@@ -30,6 +31,7 @@ const TodoCard = () => {
       );
       return filterdArray;
     });
+    <AlertHandlerContext></AlertHandlerContext>;
   };
   const onTaskNameChange = (changedTaskName, changedIndex) => {
     if (!changedTaskName) {
