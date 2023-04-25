@@ -22,6 +22,11 @@ const AlertComponent = styled.div`
   color: ${COLOR.WHITE};
   font-size: 14px;
   border-radius: 4px;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
 `;
 
 export default Alert;
