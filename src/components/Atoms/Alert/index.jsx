@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import React from "react";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 const Alert = (props) => {
   return (
@@ -27,6 +28,9 @@ const AlertComponent = styled.div`
   right: 0px;
   left: 0px;
   margin: auto;
+  @media screen and(min-width:${BREAKPOINT.MEDIUM}) {
+    width: 280px;
+  } ;
 `;
 
 export default Alert;
