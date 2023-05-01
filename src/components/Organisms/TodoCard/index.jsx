@@ -4,6 +4,7 @@ import AddTaskButton from "../../Atoms/AddTaskButton/index.jsx";
 import Task from "../../Molecules/Task/index.jsx";
 import COLOR from "../../../variables/color.js";
 import { useAlertHandlerContext } from "../../../contexts/alert_handler.jsx";
+import BREAKPOINT from "../../../variables/breakpoint.js";
 
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -37,7 +38,7 @@ const TodoCard = () => {
   const onTaskNameChange = (changedTaskName, changedIndex) => {
     if (!changedTaskName) {
       onTaskComplete(changedIndex);
-      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません");
     } else {
       setTaskList((prevState) =>
         prevState.map((value, index) => {
@@ -77,6 +78,10 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 500px;
+  @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
+    width: 280px;
+    top: 40px;
+  }
 `;
 const StyledTaskList = styled.div`
   display: flex;
