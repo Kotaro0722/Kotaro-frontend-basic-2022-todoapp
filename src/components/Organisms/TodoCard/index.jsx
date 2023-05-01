@@ -31,13 +31,13 @@ const TodoCard = () => {
       const filterdArray = prevState.filter(
         (_, index) => completedIndex !== index
       );
-      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       return filterdArray;
     });
   };
   const onTaskNameChange = (changedTaskName, changedIndex) => {
     if (!changedTaskName) {
       onTaskComplete(changedIndex);
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
     } else {
       setTaskList((prevState) =>
         prevState.map((value, index) => {
