@@ -80,7 +80,6 @@ const StyledWrapper = styled.div`
   width: 500px;
   @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
     width: 280px;
-    top: 40px;
   }
 `;
 const StyledTaskList = styled.div`

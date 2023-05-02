@@ -31,6 +31,7 @@ const AlertComponent = styled.div`
   animation: fadeIn 0.8s ease 0s 1 normal backwards;
   @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
     width: 280px;
+    top: 40px;
   }
   @keyframes fadeIn {
     from {
