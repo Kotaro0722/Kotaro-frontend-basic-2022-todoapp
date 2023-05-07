@@ -14,7 +14,6 @@ const AlertManager = () => {
     if (AlertHandlerContext.visible == true) {
       setInterval();
     }
-    console.log(AlertHandlerContext.visible);
   }, [AlertHandlerContext.visible]);
   return (
     <Alert
