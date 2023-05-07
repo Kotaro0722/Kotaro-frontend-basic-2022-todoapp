@@ -5,12 +5,13 @@ import React, { useState, useEffect } from "react";
 const AlertManager = () => {
   const AlertHandlerContext = useAlertHandlerContext();
 
-  const setInterval = () => {
-    setTimeout(() => {
-      AlertHandlerContext.closeAlert();
-    }, 5000);
-  };
-  useEffect(() => {
+    useEffect(() => {
+      const setInterval = () => {
+      setTimeout(() => {
+        AlertHandlerContext.closeAlert();
+      }, 5000);
+    };
+  
     if (AlertHandlerContext.visible == true) {
       setInterval();
     }
