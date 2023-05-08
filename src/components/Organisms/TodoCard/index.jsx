@@ -7,7 +7,7 @@ import { useAlertHandlerContext } from "../../../contexts/alert_handler.jsx";
 import BREAKPOINT from "../../../variables/breakpoint.js";
 
 const TodoCard = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([{ name: "", initializing: false }]);
   const AlertHandlerContext = useAlertHandlerContext();
 
   useEffect(() => {
@@ -18,6 +18,7 @@ const TodoCard = () => {
     }
   }, []);
   useEffect(() => {
+    console.log(taskList);
     const editedTaskList = JSON.stringify(taskList);
     localStorage.setItem("data", editedTaskList);
   }, [taskList]);
@@ -43,7 +44,7 @@ const TodoCard = () => {
       setTaskList((prevState) =>
         prevState.map((value, index) => {
           if (changedIndex === index) {
-            return { ...value, name: changedTaskName };
+            return { ...value, name: changedTaskName, initializing: false };
           } else {
             return { ...value };
           }
