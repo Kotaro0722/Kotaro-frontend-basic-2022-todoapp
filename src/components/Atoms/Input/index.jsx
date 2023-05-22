@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef();
@@ -43,6 +44,9 @@ const StyledInput = styled.input`
   color: ${COLOR.LIGHT_GRAY};
   padding-left: 4px;
   ${TEXT.S}
+  @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
+    width: 198px;
+  }
 `;
 
 export default Input;

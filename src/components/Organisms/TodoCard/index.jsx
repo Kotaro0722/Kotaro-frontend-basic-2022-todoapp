@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 import AddTaskButton from "../../Atoms/AddTaskButton/index.jsx";
 import Task from "../../Molecules/Task/index.jsx";
 import COLOR from "../../../variables/color.js";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler.jsx";
+import BREAKPOINT from "../../../variables/breakpoint.js";
 
 const TodoCard = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([{ name: "", initializing: false }]);
+  const AlertHandlerContext = useAlertHandlerContext();
+
   useEffect(() => {
     const data = localStorage.getItem("data");
     if (data) {
@@ -14,9 +18,10 @@ const TodoCard = () => {
     }
   }, []);
   useEffect(() => {
+    console.log(taskList);
     const editedTaskList = JSON.stringify(taskList);
     localStorage.setItem("data", editedTaskList);
-  },[taskList]);
+  }, [taskList]);
   const onAddTaskButtonClick = () => {
     setTaskList((prevState) => [
       ...prevState,
@@ -34,11 +39,12 @@ const TodoCard = () => {
   const onTaskNameChange = (changedTaskName, changedIndex) => {
     if (!changedTaskName) {
       onTaskComplete(changedIndex);
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません");
     } else {
       setTaskList((prevState) =>
         prevState.map((value, index) => {
           if (changedIndex === index) {
-            return { ...value, name: changedTaskName };
+            return { ...value, name: changedTaskName, initializing: false };
           } else {
             return { ...value };
           }
@@ -73,6 +79,9 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 500px;
+  @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
+    width: 280px;
+  }
 `;
 const StyledTaskList = styled.div`
   display: flex;
